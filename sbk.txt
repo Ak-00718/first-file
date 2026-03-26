@@ -1,0 +1,11 @@
+import requests
+
+url = "https://example.com/upload"
+file_path = "test.txt"
+
+with open(file_path, "rb") as f:
+    files = {"file": f}
+    response = requests.post(url, files=files)
+
+print("Status Code:", response.status_code)
+print("Response:", response.text)
